@@ -3,11 +3,11 @@
 import pyreadstat
 import pandas as pd
 
-df, meta = pyreadstat.read_sav(r"C:\Users\tiffa\OneDrive\Desktop\Big Data\Programación II\Desercion_Estudiantil\data\raw\GPES-ELAB-GEBD-ENAHO-2025_BdPublica.sav")
+df, meta = pyreadstat.read_sav("../../data/raw/GPES-ELAB-GEBD-ENAHO-2025_BdPublica.sav")
 print(df.head())
 print(df.columns)
 
-df.to_csv(r"C:\Users\tiffa\OneDrive\Desktop\Big Data\Programación II\Desercion_Estudiantil\data\processed\datos_inec_convertidos.csv", index=False)
+df.to_csv("../../data/processed/datos_inec_convertidos1.csv", index=False)
 
 
 # limpiar dataset del INEC
@@ -15,9 +15,8 @@ df.to_csv(r"C:\Users\tiffa\OneDrive\Desktop\Big Data\Programación II\Desercion_
 import csv
 print("Usando módulo csv desde:", csv.__file__)
 
-import pandas as pd
 
-ruta = r"C:\Users\tiffa\OneDrive\Desktop\Big Data\Programación II\Desercion_Estudiantil\data\processed\datos_inec_convertidos.csv"
+ruta = "../../data/processed/datos_inec_convertidos1.csv"
 
 df = pd.read_csv(ruta)
 
@@ -27,9 +26,7 @@ print("Datos cargados correctamente ")
 
 print(df.isnull().sum())
 
-import pandas as pd
-
-ruta = r"C:\Users\tiffa\OneDrive\Desktop\Big Data\Programación II\Desercion_Estudiantil\data\processed\datos_inec_convertidos.csv"
+ruta = "../../data/processed/datos_inec_convertidos1.csv"
 df = pd.read_csv(ruta)
 
 print("\nDatos cargados correctamente ✓")
@@ -69,7 +66,7 @@ print(df.isnull().sum())
 
 # 6. Guardar
 
-ruta_salida = r"C:\Users\tiffa\OneDrive\Desktop\Big Data\Programación II\Desercion_Estudiantil\data\processed\datos_inec_convertidos1.csv"
+ruta_salida = "../../data/processed/datos_inec_convertidos1.csv"
 df.to_csv(ruta_salida, index=False)
 
 print("\nArchivo limpio guardado en:")
@@ -78,38 +75,3 @@ print(ruta_salida)
 
 print(df.isnull().sum().sum())
 
-# uso de API
-
-import requests
-
-BASE_URL = "https://api.worldbank.org/v2"
-
-def get_poverty_data(country="CR", indicator="SI.POV.DDAY"):
-    """
-    Consulta datos de pobreza desde el API del Banco Mundial.
-    country = código ISO del país (CR = Costa Rica, MX = México, etc)
-    indicator = indicador de pobreza (SI.POV.DDAY = pobreza extrema $2.15)
-    """
-
-    url = f"{BASE_URL}/country/{country}/indicator/{indicator}?format=json"
-
-    response = requests.get(url)
-
-    if response.status_code != 200:
-        raise Exception(f"Error en el API: {response.status_code}")
-
-    data = response.json()
-
-    # El resultado viene en dos partes, en data[1] están los valores
-    if data[1] is None:
-        return []
-
-    poverty_list = []
-
-    for entry in data[1]:
-        poverty_list.append({
-            "year": entry["date"],
-            "value": entry["value"]
-        })
-
-    return poverty_list
