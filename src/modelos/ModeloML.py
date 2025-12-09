@@ -3,6 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from sklearn.linear_model import LinearRegression
+
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor
 from sklearn.metrics import (
@@ -75,7 +77,11 @@ class ModeloML:
 
         self.modelo_clasificacion = RandomForestClassifier(
             n_estimators=300,
+            max_depth=25,
+            min_samples_split=2,
+            min_samples_leaf=1,
             class_weight="balanced",
+            n_jobs=-1,
             random_state=42
         )
 
@@ -136,15 +142,13 @@ class ModeloML:
     # 6. ENTRENAR REGRESIÓN
     # ==============================================================
     def entrenar_regresion(self):
-        print("Entrenando modelo de REGRESIÓN...")
+        print("Entrenando modelo de REGRESIÓN LINEAL...")
 
-        self.modelo_regresion = RandomForestRegressor(
-            n_estimators=300,
-            random_state=42
-        )
+        self.modelo_regresion = LinearRegression()
 
         self.modelo_regresion.fit(self.Xr_train, self.yr_train)
-        print("✔ Modelo de regresión entrenado.")
+
+        print("✔ Modelo de regresión lineal entrenado.")
         return self.modelo_regresion
 
     # ==============================================================
@@ -160,3 +164,4 @@ class ModeloML:
         print(f"📐 RMSE: {rmse:.4f}")
 
         return mae, rmse
+
