@@ -29,7 +29,7 @@ class InformacionModelo:
     def cargar_datos(self):
         print("Cargando Excel del CONARE...")
         self.excel_raw = pd.read_excel(self.path_excel, sheet_name=self.sheet_name)
-        print("Carga completada ✔️")
+        print("Carga completada ")
 
     # -------------------------------------------------------------
     # 2. Seleccionar columnas relevantes
@@ -60,7 +60,7 @@ class InformacionModelo:
             self.df["ZONA_URBANO_RURAL_ESTUDIANTE"]
         )
 
-        print("Columnas preparadas ✔️")
+        print("Columnas preparadas ")
 
     # -------------------------------------------------------------
     # 3. Crear llave única para identificar estudiantes
@@ -76,7 +76,7 @@ class InformacionModelo:
             self.df["CANTON_ESTUDIANTE"].astype(str)
         )
 
-        print("Llaves generadas ✔️")
+        print("Llaves generadas ")
 
     # -------------------------------------------------------------
     # 4. Crear variable de deserción
@@ -103,7 +103,7 @@ class InformacionModelo:
 
         self.df["DESERTA"] = self.df["ID_ESTUDIANTE"].map(deserta)
 
-        print("Variable DESERTA creada ✔️")
+        print("Variable DESERTA creada ")
 
     # -------------------------------------------------------------
     # 5. Crear variable años matriculado
@@ -115,7 +115,7 @@ class InformacionModelo:
 
         self.df["ANIOS_MATRICULADO"] = anios
 
-        print("Variable ANIOS_MATRICULADO creada ✔️")
+        print("Variable ANIOS_MATRICULADO creada ")
 
     # -------------------------------------------------------------
     # 6. Guardar dataset final
@@ -123,7 +123,7 @@ class InformacionModelo:
     def guardar(self, path_salida="../../data/processed/conare_modelo.csv"):
         print(f"Guardando dataset final en {path_salida}...")
         self.df.to_csv(path_salida, index=False, encoding="utf-8")
-        print("Dataset final listo ✔️🎉")
+        print("Dataset final listo ")
 
     # -------------------------------------------------------------
     # FUNCIÓN PRINCIPAL
