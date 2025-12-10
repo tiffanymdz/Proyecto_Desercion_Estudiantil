@@ -141,7 +141,7 @@ Propósito: Visualizaciones estadísticas avanzadas
 
 Librería: sqlalchemy
 
-Propósito: ORM y gestión de bases de datos
+Propósito: Gestión de bases de datos
 
 Librería: pyodbc
 
