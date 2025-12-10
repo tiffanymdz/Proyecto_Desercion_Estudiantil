@@ -1,0 +1,117 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": { "name": "San José" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-84.30, 9.80],
+            [-84.10, 9.80],
+            [-84.10, 9.90],
+            [-84.30, 9.90],
+            [-84.30, 9.80]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Alajuela" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-84.50, 10.00],
+            [-84.20, 10.00],
+            [-84.20, 10.30],
+            [-84.50, 10.30],
+            [-84.50, 10.00]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Cartago" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-83.90, 9.70],
+            [-83.60, 9.70],
+            [-83.60, 9.95],
+            [-83.90, 9.95],
+            [-83.90, 9.70]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Heredia" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-84.20, 9.95],
+            [-84.05, 9.95],
+            [-84.05, 10.15],
+            [-84.20, 10.15],
+            [-84.20, 9.95]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Guanacaste" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.80, 10.40],
+            [-85.20, 10.40],
+            [-85.20, 10.80],
+            [-85.80, 10.80],
+            [-85.80, 10.40]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Puntarenas" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-85.20, 9.00],
+            [-84.60, 9.00],
+            [-84.60, 9.70],
+            [-85.20, 9.70],
+            [-85.20, 9.00]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": { "name": "Limón" },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-83.40, 9.20],
+            [-82.80, 9.20],
+            [-82.80, 10.50],
+            [-83.40, 10.50],
+            [-83.40, 9.20]
+          ]
+        ]
+      }
+    }
+  ]
+}
