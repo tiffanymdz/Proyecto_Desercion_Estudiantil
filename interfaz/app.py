@@ -31,7 +31,7 @@ modelo.entrenar_regresion()
 
 st.set_page_config(
     page_title="Proyecto de Deserción Estudiantil",
-    page_icon="🏫",
+    page_icon="",
     layout="wide"
 )
 
@@ -45,13 +45,13 @@ if "pagina" not in st.session_state:
 
 st.sidebar.title("Menú principal")
 
-if st.sidebar.button("🏠 Inicio"):
+if st.sidebar.button(" Inicio"):
     st.session_state.pagina = "Inicio"
 
-if st.sidebar.button("🔎 Información importante"):
+if st.sidebar.button(" Información importante"):
     st.session_state.pagina = "Información importante"
 
-if st.sidebar.button("📊 Gráficos"):
+if st.sidebar.button(" Gráficos"):
     st.session_state.pagina = "Graficos"
 
 <<<<<<< Updated upstream
@@ -64,7 +64,7 @@ if st.sidebar.button("Modelos"):
 # Página de inicio
 
 if st.session_state.pagina == "Inicio":
-    st.title("🎒 Proyecto Final Programación - Análisis Deserción Escolar")
+    st.title(" Proyecto Final Programación - Análisis Deserción Escolar")
     st.markdown("""
     ### **Curso:** Programación II – Big Data  
     ### **Estudiantes:** Evelyn Calderón Rojas/ María Paubla Delgado Loaiza/ Tiffany Méndez Quirós
@@ -75,16 +75,16 @@ if st.session_state.pagina == "Inicio":
 # Ver el dataset
 
 elif st.session_state.pagina == "Información importante":
-    st.header("🔎 Información importante")
+    st.header(" Información importante")
 
 
 # Gráficos
 
 elif st.session_state.pagina == "Graficos":
 <<<<<<< Updated upstream
-    st.header("📊 Resultados del Análisis")
+    st.header("Resultados del Análisis")
 =======
-    st.title("📊 Visualizaciones de resultados")
+    st.title("Visualizaciones de resultados")
 
     st.markdown("### Estas gráficas permiten analizar tendencias importantes relacionadas con la deserción estudiantil.")
 
@@ -94,7 +94,7 @@ elif st.session_state.pagina == "Graficos":
     # -------------------------------
     # 1. Estudiantes por universidad
     # -------------------------------
-    st.subheader("🏫 Estudiantes por Universidad")
+    st.subheader("Estudiantes por Universidad")
 
     fig, ax = plt.subplots(figsize=(10, 5))
     df["UNIVERSIDAD"].value_counts().plot(kind="bar", ax=ax, color="skyblue")
@@ -104,7 +104,7 @@ elif st.session_state.pagina == "Graficos":
     # ------------------------------------------------------
     # 2. Porcentaje de deserción por universidad
     # ------------------------------------------------------
-    st.subheader("⚠️ Porcentaje de Deserción por Universidad")
+    st.subheader("Porcentaje de Deserción por Universidad")
 
     fig, ax = plt.subplots(figsize=(10, 5))
     (df.groupby("UNIVERSIDAD")["DESERTA"]
@@ -119,7 +119,7 @@ elif st.session_state.pagina == "Graficos":
     # -------------------------------
     # 3. Deserción por año
     # -------------------------------
-    st.subheader("📅 Deserción por Año")
+    st.subheader("Deserción por Año")
 
     fig, ax = plt.subplots(figsize=(10, 5))
     df.groupby("ANO")["DESERTA"].mean().plot(marker="o", ax=ax, color="purple")
@@ -129,7 +129,7 @@ elif st.session_state.pagina == "Graficos":
     # -------------------------------
     # 4. Distribución de edades
     # -------------------------------
-    st.subheader("👥 Distribución de Edades")
+    st.subheader("Distribución de Edades")
 
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.hist(df["EDAD"], bins=20, color="lightgreen")
@@ -139,7 +139,7 @@ elif st.session_state.pagina == "Graficos":
     # -------------------------------------------
     # 5. Distribución de Años Matriculados
     # -------------------------------------------
-    st.subheader("🎓 Años Matriculados (Distribución)")
+    st.subheader("Años Matriculados (Distribución)")
 
     fig, ax = plt.subplots(figsize=(8, 5))
     ax.hist(df["ANIOS_MATRICULADO"], bins=15, color="lightblue")
@@ -149,7 +149,7 @@ elif st.session_state.pagina == "Graficos":
     # -------------------------------------------
     # 6. Deserción por zona urbana/rural
     # -------------------------------------------
-    st.subheader("🌎 Deserción según Zona")
+    st.subheader("Deserción según Zona")
 
     fig, ax = plt.subplots(figsize=(7, 5))
     df.groupby("ZONA")["DESERTA"].mean().plot(kind="bar", ax=ax, color="orange")
@@ -160,7 +160,7 @@ elif st.session_state.pagina == "Graficos":
     # -------------------------------------------
     # 7. Correlación entre variables numéricas
     # -------------------------------------------
-    st.subheader("📈 Mapa de Correlación (Variables Numéricas)")
+    st.subheader("Mapa de Correlación (Variables Numéricas)")
 
     num_df = df.select_dtypes(include=["int64", "float64"])
     corr = num_df.corr()
@@ -173,7 +173,7 @@ elif st.session_state.pagina == "Graficos":
 
 elif st.session_state.pagina == "Modelos":
 
-    st.title("🤖 Modelos Predictivos")
+    st.title("Modelos Predictivos")
     st.markdown("### Probá los modelos con datos personalizados")
 
     # ============================================
@@ -197,7 +197,7 @@ elif st.session_state.pagina == "Modelos":
     # FORMULARIO DE PREDICCIÓN
     # ============================================
 
-    st.subheader("📥 Ingresá los datos del estudiante")
+    st.subheader("Ingresá los datos del estudiante")
 
     # -------- Inputs --------
     edad = st.number_input("Edad", 15, 80, 20)
@@ -232,22 +232,22 @@ elif st.session_state.pagina == "Modelos":
     # ============================================
     # BOTÓN DE PREDICCIÓN
     # ============================================
-    if st.button("🔮 Predecir"):
+    if st.button("Predecir"):
 
         # -------- CLASIFICACIÓN --------
         pred_c = modelo.modelo_clasificacion.predict(entrada_clas)[0]
 
-        st.markdown("### 📘 Resultado de clasificación (Deserción):")
+        st.markdown("### Resultado de clasificación (Deserción):")
         if pred_c == 1:
-            st.error("⚠️ El modelo predice que el estudiante podría DESERTAR.")
+            st.error("El modelo predice que el estudiante podría DESERTAR.")
         else:
-            st.success("✅ El modelo predice que el estudiante CONTINUARÁ.")
+            st.success("El modelo predice que el estudiante CONTINUARÁ.")
 
         # -------- REGRESIÓN --------
         pred_r = modelo.modelo_regresion.predict(entrada_reg)[0]
 
-        st.markdown("### 🎓 Predicción de años matriculados:")
-        st.info(f"📌 El modelo estima que el estudiante permanecerá **{pred_r:.2f} años** matriculado.")
+        st.markdown("###Predicción de años matriculados:")
+        st.info(f"El modelo estima que el estudiante permanecerá **{pred_r:.2f} años** matriculado.")
 
 
 
