@@ -17,15 +17,15 @@ class VisualizadorMapas:
         if "PROVINCIA_ESTUDIANTE" in self.df.columns:
             self.df["PROVINCIA_ESTUDIANTE"] = (
                 self.df["PROVINCIA_ESTUDIANTE"]
-                .str.title()
+                .str.upper()
                 .replace({
-                    "Limon": "Limón",
-                    "San jose": "San José",
-                    "Heredia": "Heredia",
-                    "Alajuela": "Alajuela",
-                    "Cartago": "Cartago",
-                    "Puntarenas": "Puntarenas",
-                    "Guanacaste": "Guanacaste",
+                    "SAN JOSE": "San José",
+                    "LIMON": "Limón",
+                    "HEREDIA": "Heredia",
+                    "CARTAGO": "Cartago",
+                    "GUANACASTE": "Guanacaste",
+                    "PUNTARENAS": "Puntarenas",
+                    "ALAJUELA": "Alajuela",
                 })
             )
 
