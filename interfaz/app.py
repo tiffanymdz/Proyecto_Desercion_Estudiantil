@@ -128,6 +128,7 @@ elif st.session_state.pagina == "Graficos":
 
     st.pyplot(fig)
 
+
     # 5. Años matriculados
     st.subheader("🎓 Años Matriculados")
     fig, ax = plt.subplots(figsize=(8, 5))
