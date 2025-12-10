@@ -17,9 +17,12 @@ Proyecto universitario de ciencia de datos que analiza la deserción estudiantil
 
 🛠️ Tecnologías Utilizadas
 
+📒 Uso
+
 👥 Autores
 
 🔍 Descripción
+
 Este proyecto implementa un análisis exhaustivo de la deserción estudiantil universitaria en Costa Rica, integrando múltiples fuentes de datos para identificar patrones y factores que influyen en el abandono de los estudios superiores. El análisis combina datos de matrícula universitaria, índices de pobreza y variables socioeconómicas mediante técnicas de ciencia de datos y aprendizaje automático.
 
 📊 Fuentes de Datos
@@ -99,7 +102,7 @@ Cuadernos Jupyter con análisis detallados y experimentación.
 
 🛠️ Tecnologías Utilizadas
 
-Lenguaje Principal
+- Lenguaje Principal
 
 Python 3.8+
 
@@ -117,7 +120,7 @@ Librería: pyreadstat
 
 Propósito: Lectura de archivos estadísticos (SPSS, SAS, Stata)
 
-Visualización
+- Visualización
 
 Librería: matplotlib
 
@@ -127,7 +130,7 @@ Librería: seaborn
 
 Propósito: Visualizaciones estadísticas avanzadas
 
-Bases de Datos
+- Bases de Datos
 
 Librería: sqlalchemy
 
@@ -137,13 +140,13 @@ Librería: pyodbc
 
 Propósito: Conexión a bases de datos SQL Server
 
-Machine Learning
+- Machine Learning
 
 Librería: scikit-learn
 
 Propósito: Modelos de clasificación y regresión
 
-Utilidades
+- Utilidades
 
 Librería: openpyxl
 
@@ -161,13 +164,13 @@ Librería: os
 
 Propósito: Interacción del sistema operativa
 
-Interfaz de Usuario 
+- Interfaz de Usuario 
 
 Librería: streamlit
 
 Propósito: Aplicación web interactiva
 
-Estructura de Uso Típica
+📒 Estructura de Uso Típica
 
 1. Cargar y procesar datos: utiliza los módulos en SRC/datos/
 
