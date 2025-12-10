@@ -43,10 +43,10 @@ class ModeloML:
     # -----------------------------------------------------------
     def cargar_datos(self):
         ruta_completa = os.path.join(BASE_DIR, self.ruta_datos)
-        print(f"📂 Cargando datos desde: {ruta_completa}")
+        print(f"Cargando datos desde: {ruta_completa}")
 
         self.df = pd.read_csv(ruta_completa)
-        print("✔ Datos cargados correctamente.")
+        print(" Datos cargados correctamente.")
         return self.df
 
 
@@ -54,7 +54,7 @@ class ModeloML:
     #  PREPARAR CLASIFICACIÓN
     # -----------------------------------------------------------
     def preparar_clasificacion(self):
-        print("\n📌 Preparando datos para CLASIFICACIÓN...")
+        print("\n Preparando datos para CLASIFICACIÓN...")
 
         # Variable objetivo: DESERTA
         self.yc = self.df["DESERTA"]
@@ -71,7 +71,7 @@ class ModeloML:
             self.Xc, self.yc, test_size=0.2, random_state=42
         )
 
-        print(f"✔ Clasificación lista. Shape final: {self.Xc.shape}")
+        print(f" Clasificación lista. Shape final: {self.Xc.shape}")
         return self.Xc_train, self.Xc_test, self.yc_train, self.yc_test
 
 
@@ -79,7 +79,7 @@ class ModeloML:
     #  ENTRENAR CLASIFICACIÓN
     # -----------------------------------------------------------
     def entrenar_clasificacion(self):
-        print("\n🌲 Entrenando modelo de CLASIFICACIÓN (Random Forest)...")
+        print("\n Entrenando modelo de CLASIFICACIÓN (Random Forest)...")
 
         self.modelo_clasificacion = RandomForestClassifier(
             n_estimators=200,
@@ -91,7 +91,7 @@ class ModeloML:
         )
 
         self.modelo_clasificacion.fit(self.Xc_train, self.yc_train)
-        print("✔ Modelo entrenado.")
+        print(" Modelo entrenado.")
         return self.modelo_clasificacion
 
 
@@ -99,11 +99,11 @@ class ModeloML:
     #  EVALUAR CLASIFICACIÓN
     # -----------------------------------------------------------
     def evaluar_clasificacion(self):
-        print("\n📊 Evaluando CLASIFICACIÓN...")
+        print("\n Evaluando CLASIFICACIÓN...")
         y_pred = self.modelo_clasificacion.predict(self.Xc_test)
 
         acc = accuracy_score(self.yc_test, y_pred)
-        print(f"🎯 Accuracy: {acc:.4f}")
+        print(f" Accuracy: {acc:.4f}")
 
         return acc
 
@@ -112,7 +112,7 @@ class ModeloML:
     #  PREPARAR REGRESIÓN
     # -----------------------------------------------------------
     def preparar_regresion(self):
-        print("\n📌 Preparando datos para REGRESIÓN...")
+        print("\n Preparando datos para REGRESIÓN...")
 
         self.yr = self.df["ANIOS_MATRICULADO"]
 
@@ -129,7 +129,7 @@ class ModeloML:
             self.Xr, self.yr, test_size=0.2, random_state=42
         )
 
-        print(f"✔ Regresión lista. Shape final: {self.Xr.shape}")
+        print(f" Regresión lista. Shape final: {self.Xr.shape}")
         return self.Xr_train, self.Xr_test, self.yr_train, self.yr_test
 
 
@@ -137,7 +137,7 @@ class ModeloML:
     #  ENTRENAR REGRESIÓN (Lineal)
     # -----------------------------------------------------------
     def entrenar_regresion(self):
-        print("\n📈 Entrenando modelo de REGRESIÓN (Linear Regression)...")
+        print("\n Entrenando modelo de REGRESIÓN (Linear Regression)...")
 
         self.modelo_regresion = LinearRegression()
         self.modelo_regresion.fit(self.Xr_train, self.yr_train)
@@ -150,15 +150,15 @@ class ModeloML:
     #  EVALUAR REGRESIÓN
     # -----------------------------------------------------------
     def evaluar_regresion(self):
-        print("\n📊 Evaluando REGRESIÓN...")
+        print("\n Evaluando REGRESIÓN...")
 
         y_pred = self.modelo_regresion.predict(self.Xr_test)
 
         mae = mean_absolute_error(self.yr_test, y_pred)
         rmse = np.sqrt(mean_squared_error(self.yr_test, y_pred))
 
-        print(f"📏 MAE: {mae:.4f}")
-        print(f"📐 RMSE: {rmse:.4f}")
+        print(f" MAE: {mae:.4f}")
+        print(f" RMSE: {rmse:.4f}")
 
         return mae, rmse
 
@@ -175,7 +175,7 @@ class ModeloML:
 
         for col in X.columns:
             if X[col].dtype == "object" and X[col].nunique() > 30:
-                print(f"⚠️ Eliminando columna enorme: {col} ({X[col].nunique()} categorías)")
+                print(f" Eliminando columna enorme: {col} ({X[col].nunique()} categorías)")
                 columnas_a_eliminar.append(col)
 
         X = X.drop(columns=columnas_a_eliminar)
