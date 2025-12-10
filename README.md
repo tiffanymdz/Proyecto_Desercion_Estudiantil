@@ -21,6 +21,8 @@ Proyecto universitario de ciencia de datos que analiza la deserción estudiantil
 
 👥 Autores
 
+
+
 🔍 Descripción
 
 Este proyecto implementa un análisis exhaustivo de la deserción estudiantil universitaria en Costa Rica, integrando múltiples fuentes de datos para identificar patrones y factores que influyen en el abandono de los estudios superiores. El análisis combina datos de matrícula universitaria, índices de pobreza y variables socioeconómicas mediante técnicas de ciencia de datos y aprendizaje automático.
@@ -54,6 +56,7 @@ World Bank API
 🔗 https://publicapis.io/world-bank-api
 
 
+
 🎯 Objetivos del Proyecto
 
 El proyecto busca diseñar y desarrollar un sistema completo de ciencia de datos que integre:
@@ -67,6 +70,8 @@ El proyecto busca diseñar y desarrollar un sistema completo de ciencia de datos
 ✅ Machine Learning supervisado: aplicación de algoritmos de clasificación y regresión para predicción
 
 ✅ Programación Orientada a Objetos: estructura modular que fomenta buenas prácticas de desarrollo
+
+
 
 🏗️ Arquitectura del Proyecto
 
@@ -99,6 +104,8 @@ Aplicación web interactiva desarrollada con Streamlit para visualización y uso
 📂 Notebooks
 
 Cuadernos Jupyter con análisis detallados y experimentación.
+
+
 
 🛠️ Tecnologías Utilizadas
 
@@ -170,6 +177,8 @@ Librería: streamlit
 
 Propósito: Aplicación web interactiva
 
+
+
 📒 Estructura de Uso Típica
 
 1. Cargar y procesar datos: utiliza los módulos en SRC/datos/
@@ -181,6 +190,8 @@ Propósito: Aplicación web interactiva
 4. Visualizar resultados: genera gráficos con los módulos en SRC/visualizador/
 
 5. Interactuar con la aplicación: lanza la interfaz Streamlit para exploración interactiva
+
+
 
 👥 Autores
 
